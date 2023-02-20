@@ -49,10 +49,9 @@ export class ChatComponent implements OnInit {
     "i don't mind the language",
     "i only care about a nice typing experience ⌨️",
     "it is a corne with choc switches",
-    "since you are still here",
-    "if you want to write me something",
-    "send me an email: hello@numv.xyz",
-    "but for now i will let you enjoy the music",
+    "if you want to write me something..",
+    "you could send me an email: hello@numv.xyz",
+    "but for now i will just let you enjoy the music",
   ]
 
   chathistory : Array<string> =[]
