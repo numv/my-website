@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <div class="chathistory" *ngFor="let item of chathistory">
+    <h2 [innerHTML]="item"></h2>
+  </div>
+
+  <app-chat-input
+    [input]="phrases[0]"
+    (written)="onWritten($event)"
+  ></app-chat-input>
+</div>

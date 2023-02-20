@@ -1,0 +1,35 @@
+#main {
+  z-index: -100;
+
+  --cl--foreground: #b4a3fd;
+  --cl--background--1: #261c3d;
+  --cl--background--2: #100721;
+
+  /*
+  --cl--foreground: #fdd9a3;
+  --cl--background--1: #1c3d2e;
+  --cl--background--2: #210907;
+
+  --cl--foreground: #d4f09d;
+  --cl--background--1: #70193c;
+  --cl--background--2: #27271f;
+
+  --cl--background--1: #b7192d;
+  --cl--background--2: #300458;
+  --cl--foreground: #ff7285;
+
+  --cl--background--1: #2a8736;
+  --cl--background--2: #1a296f;
+  --cl--foreground: #82e08e;
+  */
+
+  background: radial-gradient(
+    var(--cl--background--1) 0%,
+    var(--cl--background--2) 100%
+  );
+  color: var(--cl--foreground);
+
+  position: relative;
+  display: flex;
+  height: 100vh;
+}
