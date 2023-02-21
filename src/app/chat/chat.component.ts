@@ -8,27 +8,13 @@ import { ChatInputComponent } from '../chat-input/chat-input.component';
 })
 export class ChatComponent implements OnInit {
 
-  ngOnInit(): void {
-    this.audio.load();
-    this.audio.onended = (ev) => { this.onSongFinished() };
-  }
-
-  onSongFinished() {
-    this.loopNum = 0
-    this.phrases = [
-      `you listend for ${this.audio.currentTime} seconds`,
-      "and you kinda reached the end",
-      "i don't have anything planned after this yet",
-      "soo i will now leave you with my most visited website",
-      "here we go 💻"
-    ]
-    this.chatInput.writeTick();
-  }
-
-
   @ViewChild(ChatInputComponent)
   private chatInput!: ChatInputComponent;
 
+  loopNum = 0
+  audio = new Audio("../assets/Lazy-Afternoon.mp3");
+
+  chathistory : Array<string> =[]
   phrases = [
     "🐈 meow",
     "Oh, Hello there 👋.",
@@ -54,10 +40,26 @@ export class ChatComponent implements OnInit {
     "but for now i will just let you enjoy the music",
   ]
 
-  chathistory : Array<string> =[]
 
-  loopNum = 0
-  audio = new Audio("../assets/Lazy-Afternoon.mp3");
+  ngOnInit(): void {
+    this.audio.load();
+    this.audio.onended = (ev) => { this.onSongFinished() };
+    this.audio.volume = 0.5;
+  }
+
+  onSongFinished() {
+    this.loopNum = 0
+    this.phrases = [
+      `you listend for ${this.audio.currentTime} seconds`,
+      "and you kinda reached the end",
+      "i don't have anything planned after this yet",
+      "soo i will now leave you with my most visited website",
+      "here we go 💻"
+    ]
+    this.chatInput.writeTick();
+  }
+
+
 
   onWritten(done: boolean)
   {
@@ -77,7 +79,7 @@ export class ChatComponent implements OnInit {
     if(this.chatInput.input.endsWith("⌨️"))
     {
       this.chathistory.push(
-        "<img src='../assets/keyboard.jpg' width='450px'/>"
+        "<img src='../assets/keyboard.jpg' width='100%' />"
       );
     }
 

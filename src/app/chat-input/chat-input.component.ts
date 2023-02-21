@@ -19,6 +19,7 @@ export class ChatInputComponent  {
   ngOnInit(): void {
     this.audio.src = "../assets/typing.mp3"
     this.audio.load();
+    this.audio.volume = 0.5;
     this.audio.loop = true;
     this.writeTick();
   }

@@ -1,6 +1,14 @@
-<div class="wrapper">
-  <div class="chathistory" *ngFor="let item of chathistory">
-    <h2 [innerHTML]="item"></h2>
+<div class="chat">
+  <div class="chat-history">
+    <div class="msg msg-left" *ngFor="let item of chathistory">
+      <div class="msg-wrapper">
+        <div class="msg-name"></div>
+        <div class="msg-time"></div>
+        <div class="msg-text">
+          <span [innerHTML]="item"></span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <app-chat-input
