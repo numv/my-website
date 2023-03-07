@@ -36,7 +36,7 @@ export class ChatComponent implements OnInit {
     "i only care about a nice typing experience ⌨️",
     "it is a corne with choc switches perfect for vim",
     "if you want to write me something..",
-    "you could send me an email: hello@numv.xyz",
+    "you could send me an email: hello@numv.eu",
     "but for now i will just let you enjoy the music",
   ]
 
